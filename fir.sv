@@ -11,10 +11,10 @@ sample_array samples [0:N-1];
 // code used to generate disp(sprintf('%d,',round(fir1(15,0.5)*32768)))
 
 const sample_array coefficients [0:N-1] =
-     '{991,1452,-2776,-5220,9135,15110,-24361,-40071,74079,233805,233805,74079,-40071,-24361,15110,9135,-5220,-2776,1452,991};
+     '{0, -166, -415, -505, 0, 1123, 2085, 1804, 0, -2250, -2250, 0, 1804, 2085, 1123, 0, -505, -415, -166, 0}; //NOTCH
 
 
-logic unsigned [($clog2(N))-1:0] address; //clog2 of 16 is 4 why?
+logic unsigned [($clog2(N))-1:0] address; //$clog2 of 16 is 4 use fpr parameterisation
 
 logic signed [((2*N)-1):0] sum;
 
